@@ -1,0 +1,47 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Bmeste</title>
+    <link href="{% static 'Bmeste/css/styles-index.css' %}" rel="stylesheet" type="text/css">
+</head>
+	
+	
+<body>
+	<h1>В Месте</h1>
+	<h2>함께, 그곳에</h2>
+	<div id="line_disp">
+		<svg class="line">
+			<rect id="line"></rect>
+		</svg>
+	</div>
+	
+	<div id="boxes">
+		<svg width="60rem" height="60rem" style="position: relative">
+			<rect id="rectangle_1"></rect>
+			<text text-anchor="middle" alignment-baseline="middle" x="50%" y="50%" font-size="7.5rem" fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">작가 지도</text>
+			<rect id="white_rect"></rect>
+			<a xlink:href= "/pieces/"
+			   xlink:title="작품 지도 바로가기"
+			   target="_blank">
+				<text text-anchor="middle" alignment-baseline="middle" x="50%" y="80%" font-size="3.5rem">바로가기</text>
+			</a>
+		</svg>
+
+		<svg width="60rem" height="60rem" style="position: relative">
+			<rect id="rectangle_2"></rect>
+			<text text-anchor="middle" alignment-baseline="middle" x="50%" y="50%" font-size="7.5rem" fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">작가 지도</text>
+			<rect id="white_rect"></rect>
+			<a xlink:href= "/authors/"
+			   xlink:title="작가 지도 바로가기"
+			   target="_blank">
+				<text text-anchor="middle" alignment-baseline="middle" x="50%" y="80%" font-size="3.5rem">바로가기</text>
+			</a>
+		</svg>
+	</div>
+	
+</body>
+</html>

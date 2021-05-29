@@ -1,0 +1,107 @@
+html {
+    font-size: 30%
+}
+h1 {
+	color: #003876;
+	text-align: center;
+	font-size: 10.4rem;
+	margin: 10rem 0 0 0;
+}
+
+h2 {
+	text-align: center;
+	font-size: 7.7rem;
+	margin: 0;
+}
+
+svg a {
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+svg a:hover {
+  fill: #448aff;
+}
+svg #text_1 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    fill: #FFFFFF;
+    font-size: 7.5rem;
+    filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
+}
+
+#line_disp {
+    display: flex;
+	justify-content: center;
+	margin: 0 0 10rem 0;
+}
+
+.line {
+	width: 50rem;
+	height: 0.5rem;
+}
+
+#line {
+    fill: #707070;
+	width: 200rem;
+	height: 0.5rem;
+}
+
+#boxes {
+	display: block;
+	justify-content: center;
+}
+
+#rectangle_1 {
+	fill: rgb(245,245,87);
+	rx: 11.3rem;
+	ry: 11.3rem;
+	margin: 0 auto;
+	width: 57.5rem;
+	height: 57.5rem;
+	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
+}
+
+#rectangle_2 {
+	fill: #5ED3D3;
+	rx: 11.3rem;
+	ry: 11.3rem;
+	margin: 0 auto;
+	width: 57.5rem;
+	height: 57.5rem;
+    filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
+}
+
+#white_rect {
+    fill: #FFFFFF;
+    width: 27.3rem;
+    height: 8.8rem;
+    x: 50%;
+    y: 80%;
+    transform: translate(-13.95rem, -4.4rem);
+}
+
+
+@media (min-width: 601px) {
+    html {
+        font-size: 0.4vw;
+    }
+
+    #line {
+	    width: 200rem;
+	    height: 3px;
+    }
+
+    #boxes {
+	    display: flex;
+	    justify-content: center;
+    }
+}
+
+
+
+
+
+
