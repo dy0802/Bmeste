@@ -1,6 +1,16 @@
-html {
-    font-size: 30%
+@font-face{
+    font-family: SCDream5;
+    src: url('../fonts/SCDream5.otf')
 }
+
+body{
+    font-family: SCDReam5;
+}
+
+html {
+    font-size: 0.55vh;
+}
+
 h1 {
 	color: #003876;
 	text-align: center;
@@ -50,25 +60,37 @@ svg #text_1 {
 }
 
 #boxes {
-	display: block;
-	justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+#box {
+    width: 60rem;
+    height: 60rem;
+    position: relative;
+    justify-content: center;
 }
 
 #rectangle_1 {
+    display: block;
 	fill: rgb(245,245,87);
 	rx: 11.3rem;
 	ry: 11.3rem;
 	margin: 0 auto;
+	padding: 7rem 0;
 	width: 57.5rem;
 	height: 57.5rem;
 	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
 }
 
 #rectangle_2 {
+    display: block;
 	fill: #5ED3D3;
 	rx: 11.3rem;
 	ry: 11.3rem;
 	margin: 0 auto;
+	padding: 7rem 0;
 	width: 57.5rem;
 	height: 57.5rem;
     filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
@@ -78,25 +100,66 @@ svg #text_1 {
     fill: #FFFFFF;
     width: 27.3rem;
     height: 8.8rem;
+    rx: 2.5rem;
+    ry: 2.5rem;
     x: 50%;
     y: 80%;
     transform: translate(-13.95rem, -4.4rem);
 }
 
+.circle_1 {
+    position: fixed;
+    overflow: visible;
+    width: 80.7rem;
+    height: 80.7rem;
+    left: -18.7rem;
+    bottom: -10rem;
+    z-index: -1;
+    border-image-slice: 0 0 18.7rem 0;
+}
 
-@media (min-width: 601px) {
+#circle_1 {
+    fill: #FFFFFF;
+    stroke: rgba(94,211,211,0.651);
+    stroke-width: 15rem;
+}
+
+.circle_2 {
+    position: fixed;
+    overflow: visible;
+    width: 97.9rem;
+    height: 97.9rem;
+    right: -20rem;
+    top: -16.8rem;
+    z-index: -1;
+    border-image-slice: 16.8rem  0 0;
+}
+
+#circle_2 {
+    fill: #FFFFFF;
+    stroke: rgba(245,245,87,1);
+    stroke-width: 7.5rem;
+}
+
+
+@media (orientation: landscape) {
     html {
-        font-size: 0.4vw;
+        font-size: 0.45vw;
     }
-
     #line {
 	    width: 200rem;
 	    height: 3px;
     }
+    #rectangle_1 {
+        padding: 0;
+    }
 
+    #rectangle_2 {
+        padding: 0;
+    }
     #boxes {
-	    display: flex;
-	    justify-content: center;
+        flex-direction: row;
+        justify-content: center;
     }
 }
 
