@@ -32,15 +32,6 @@ svg a {
 svg a:hover {
   fill: #448aff;
 }
-svg #text_1 {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    fill: #FFFFFF;
-    font-size: 7.5rem;
-    filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
-}
 
 #line_disp {
     display: flex;
@@ -77,6 +68,8 @@ svg #text_1 {
 	fill: rgb(245,245,87);
 	rx: 11.3rem;
 	ry: 11.3rem;
+	-webkit-rx: 11.3rem;
+	-webkit-ry: 11.3rem;
 	margin: 0 auto;
 	padding: 7rem 0;
 	width: 57.5rem;
@@ -89,6 +82,8 @@ svg #text_1 {
 	fill: #5ED3D3;
 	rx: 11.3rem;
 	ry: 11.3rem;
+	-webkit-rx: 11.3rem;
+	-webkit-ry: 11.3rem;
 	margin: 0 auto;
 	padding: 7rem 0;
 	width: 57.5rem;
@@ -102,6 +97,8 @@ svg #text_1 {
     height: 8.8rem;
     rx: 2.5rem;
     ry: 2.5rem;
+	-webkit-rx: 2.5rem;
+	-webkit-ry: 2.5rem;
     x: 50%;
     y: 80%;
     transform: translate(-13.95rem, -4.4rem);

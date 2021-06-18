@@ -1,3 +1,5 @@
 from django.contrib import admin
+from Bmeste.models import Author, Pieces
 
-# Register your models here.
+admin.site.register(Author)
+admin.site.register(Pieces)
