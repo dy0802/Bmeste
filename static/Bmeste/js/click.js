@@ -1,14 +1,11 @@
 const target = document.getElementsByClassName('box');
-const target1 = document.getElementsByClassName('box_rect');
 
-
-for (var i = 0; i < target.length; i++)
+for (const i = 0; i < target.length; i++)
 {
-    eval(target[i].addEventListener('click', function(i){ changeColor("+i+"); }));
-
-
+    target[i].addEventListener('click', function(){ changeColor(i); });
 }
-function changeColor(i)
+function changeColor(a)
 {
-    target1[i].style.fill = "#003876";
+    console.log(a);
+    document.getElementsByClassName('box_rect')[a].style.fill = "#003876";
 }
