@@ -32,7 +32,7 @@
     <div class="boxes">
     {% if author_list %}
         {% for author in author_list %}
-            {% for piece in author.pieces_set.all %}
+            {% for piece in author.piece_set.all %}
                 <a href="/pieces/{{ piece.id }}/">
                     <div id="container">
                         <svg id="box">

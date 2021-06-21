@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from Bmeste.models import Author, Pieces
+from django.shortcuts import render, get_object_or_404
+from Bmeste.models import Author, Piece, Piece_detail
 
 
 def index(request):
@@ -10,8 +10,9 @@ def pieces(request):
     context = {'author_list': author_list}
     return render(request, 'Bmeste/pieces.html', context)
 
-def piece_detail(request):
-    return render(request, 'Bmeste/piece_detail.html')
+def piece_detail(request, piece_id):
+    piece = get_object_or_404(Piece, pk=piece_id)
+    return render(request, 'Bmeste/piece_detail.html', {'piece': piece})
 
 def authors(request):
     return render(request, 'Bmeste/authors.html')

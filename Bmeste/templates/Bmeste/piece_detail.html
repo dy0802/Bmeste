@@ -1,10 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+{% load static %}
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>{{  }}</title>
-</head>
-<body>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>{{ piece.title }} - В Месте</title>
+    <link href="{% static 'Bmeste/css/styles-pieces_detail.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
+</head>
+
+<body>
+	<div>
+		<svg class="circle_1">
+			<circle id="circle_1" r="40.35rem" cx="40.35rem" cy="40.35rem"></circle>
+		</svg>
+		<svg class="circle_2">
+			<circle id="circle_2" r="48.95rem" cx="48.95rem" cy="48.95rem"></circle>
+		</svg>
+	</div>
+    <header>
+        <a href="../../" title="В Месте 홈">
+            <svg class="line">
+                <rect id="line"></rect>
+            </svg>
+            <div>
+                <h1>В Месте</h1>
+                <h2>함께, 그곳에</h2>
+            </div>
+        </a>
+    </header>
+    <div class="seperate">
+        <div id="map"></div>
+        <div class="boxes">
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        {% for detail in piece.piece_detail_set.all %}
+            <div id="container">
+                <svg class="box">
+                    <rect class="box_rect"></rect>
+                    <text text-anchor="middle"
+                        alignment-baseline="middle"
+                        x="50%" y="50%"
+                        font-size="4rem"
+                        fill="#ffffff"
+                        filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ forloop.counter }}. {{ detail.piece_detail }}</text>
+                </svg>
+
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+
+    <script src="{% static 'Bmeste/js/map.js' %}" async></script>
+    <script src="{% static 'Bmeste/js/click.js' %}" async></script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeOquyY6lNdbXUc7uYwUqxkR_x-hfRS_I&callback=initMap&libraries=&v=weekly"
+            async></script>
 </body>
 </html>
