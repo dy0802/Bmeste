@@ -106,15 +106,15 @@ h2 {
 }
 
 #container {
-    width: 42rem;
-    height: 18rem;
+    width: 82vw;
+    height: 12rem;
     position: relative;
     justify-content: center;
 }
 
 .box {
-    width: 42rem;
-    height: 15rem;
+    width: 82vw;
+    height: 11rem;
     position: absolute;
     cursor: pointer;
 }
@@ -125,12 +125,12 @@ h2 {
 
 .box_rect{
     fill: #D0CECE;
-    rx: 3rem;
-	ry: 3rem;
-	-webkit-rx: 3rem;
-	-webkit-ry: 3rem;
-	width: 40rem;
-	height: 14rem;
+    rx: 1.5rem;
+	ry: 1.5rem;
+	-webkit-rx: 1.5rem;
+	-webkit-ry: 1.5rem;
+	width: 80vw;
+	height: 10rem;
 	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
     transition: all 0.4s ease;
 }

@@ -1,10 +1,15 @@
-// This example displays a marker at the center of Australia.
-// When the user clicks the marker, an info window opens.
+const default_location_lat = JSON.parse(document.getElementById('default_location_lat').textContent);
+const default_location_lng = JSON.parse(document.getElementById('default_location_lng').textContent);
+const default_location = { lat: default_location_lat, lng: default_location_lng };
+const location_lat = JSON.parse(document.querySelectAll('lat').textContent);
+console.log(location_lat)
+
+
 function initMap() {
-  const myLatLng = { lat: 58, lng: 33 };
+  const myLatLng = { lat: 37.5, lng: 127 };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
-    center: myLatLng,
+    center: default_location,
   });
   const contentString =
     '<div id="content">' +
