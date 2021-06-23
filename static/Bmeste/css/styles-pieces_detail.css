@@ -134,18 +134,31 @@ h2 {
 	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
     transition: all 0.4s ease;
 }
+.box_rect.active{
+    fill: #003876;
+    rx: 1.5rem;
+	ry: 1.5rem;
+	-webkit-rx: 1.5rem;
+	-webkit-ry: 1.5rem;
+	width: 80vw;
+	height: 10rem;
+	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
+    transition: all 0.4s ease;
+}
+
 
 #map {
     z-index: 500;
     height: 50vh;
     width: 100%;
     margin: 0 0 5rem 0;
+    transition: all 0.4s ease;
 }
 
 
 @media (orientation: landscape) {
     html {
-        font-size: 0.45vw;
+        font-size: 0.3vw;
     }
 
     .seperate {
@@ -159,11 +172,11 @@ h2 {
     }
 
     #container {
-        width: 21vw;
+        width: 22vw;
     }
 
     .box {
-        width: 21vw;
+        width: 22vw;
     }
 
     .box_rect{

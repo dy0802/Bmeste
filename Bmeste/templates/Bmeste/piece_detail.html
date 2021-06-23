@@ -44,7 +44,7 @@
                         x="50%" y="50%"
                         font-size="3rem"
                         fill="#ffffff"
-                        filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ forloop.counter }}. {{ detail }}</text>
+                        filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ forloop.counter }}. {{ detail.piece_detail }}</text>
                 </svg>
             </div>
         {% endfor %}
@@ -52,13 +52,13 @@
     </div>
 
     {% for detail in piece.piece_detail_set.all %}
+    {{ detail.piece_detail|json_script:"piece_detail" }}
     {{ detail.location_lat|json_script:"lat" }}
+    {{ detail.location_lng|json_script:"lng" }}
     {% endfor %}
-    <script src="{% static 'Bmeste/js/map.js' %}" async></script>
-    <script src="{% static 'Bmeste/js/click.js' %}" async></script>
+    <script type="module" src="{% static 'Bmeste/js/map.js' %}"></script>
+    <script type="module" src="{% static 'Bmeste/js/click.js' %}"></script>
     {{ piece.default_location_lat|json_script:"default_location_lat" }}
     {{ piece.default_location_lng|json_script:"default_location_lng" }}
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeOquyY6lNdbXUc7uYwUqxkR_x-hfRS_I&callback=initMap&libraries=&v=weekly"
-            async></script>
 </body>
 </html>
