@@ -127,8 +127,6 @@ h2 {
     fill: #D0CECE;
     rx: 1.5rem;
 	ry: 1.5rem;
-	-webkit-rx: 1.5rem;
-	-webkit-ry: 1.5rem;
 	width: 80vw;
 	height: 10rem;
 	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
@@ -138,8 +136,6 @@ h2 {
     fill: #003876;
     rx: 1.5rem;
 	ry: 1.5rem;
-	-webkit-rx: 1.5rem;
-	-webkit-ry: 1.5rem;
 	width: 80vw;
 	height: 10rem;
 	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
@@ -158,7 +154,7 @@ h2 {
 
 @media (orientation: landscape) {
     html {
-        font-size: 0.3vw;
+        font-size: 0.45vw;
     }
 
     .seperate {
@@ -172,15 +168,21 @@ h2 {
     }
 
     #container {
-        width: 22vw;
+        width: 53rem;
     }
 
     .box {
-        width: 22vw;
+        width: 53rem;
     }
 
     .box_rect{
-        width: 20vw;
+        width: 51rem;
+        justify-content: center;
+    }
+
+    .box_rect.active{
+        width: 51rem;
+        justify-content: center;
     }
 
     #map {
