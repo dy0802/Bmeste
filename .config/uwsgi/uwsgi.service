@@ -3,7 +3,7 @@ Description=uWSGI service
 After=syslog.target
 
 [Service]
-ExecStart=/home/ubuntu/devenv/bin/uwsgi -i /srv/Bmeste/.config/uwsgi/django_site.ini
+ExecStart=/home/ubuntu/myvenv/bin/uwsgi -i /srv/Bmeste/.config/uwsgi/django_site.ini
 
 Restart=always
 KillSignal=SIGQUIT
