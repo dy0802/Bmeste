@@ -15,4 +15,10 @@ def piece_detail(request, piece_id):
     return render(request, 'Bmeste/piece_detail.html', {'piece': piece})
 
 def authors(request):
-    return render(request, 'Bmeste/authors.html')
+    author_list = Author.objects.all().order_by('-pub_date')
+    context = {'author_list': author_list}
+    return render(request, 'Bmeste/authors.html', context)
+
+def author_detail(request, author_id):
+    author = get_object_or_404(Author, pk=author_id)
+    return render(request, 'Bmeste/author_detail.html', {'author': author})
