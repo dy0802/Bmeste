@@ -33,6 +33,17 @@
     </header>
     <div class="seperate">
         <div id="map"></div>
+        <div id="decript">
+            <svg class="box">
+                <rect class="box_rect"></rect>
+                <text text-anchor="middle"
+                    alignment-baseline="middle"
+                    x="50%" y="50%"
+                    font-size="3rem"
+                    fill="#ffffff"
+                    filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">설명보기</text>
+            </svg>
+        </div>
         <div class="boxes">
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
         {% for detail in piece.piece_detail_set.all %}
@@ -49,7 +60,28 @@
             </div>
         {% endfor %}
         </div>
+
     </div>
+    <form method="POST">
+        {% csrf_token %}
+        <input name="writer_name" type="text" value="">
+        <input name="comment_text" type="text" value="">
+        <input class="btn btn-primary" type="submit" value="저장">
+    </form>
+
+    <table class="table table-striped">
+    {% for comment in piece.comment_piece_set.all %}
+    <tr>
+        <td>{{ comment.created }}</td>
+        <td>{{ comment.writer_name }}</td>
+        <td>{{ comment.comment_text|linebreaks }}</td>
+    </tr>
+    </table>
+    {% empty %}
+    <p>No comments here yet :(</p>
+    {% endfor %}
+
+
 
     {% for detail in piece.piece_detail_set.all %}
     {{ detail.piece_detail|json_script:"piece_detail" }}

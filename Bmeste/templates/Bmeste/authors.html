@@ -32,14 +32,14 @@
     <div class="boxes">
     {% if author_list %}
         {% for author in author_list %}
-            <a href="/authors/{{ authors.id }}/">
+            <a href="/authors/{{ author.id }}/">
                 <div id="container">
                     <svg id="box">
                         <rect class="rectangle"></rect>
                         <text text-anchor="start"
                             alignment-baseline="middle"
-                            x="40%" y="30%"
-                            font-size="4rem"
+                            x="40%" y="45%"
+                            font-size="6rem"
                             fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ author.author_name }}</text>
                     </svg>
                     <img src="{{ author.img.url }}"/>

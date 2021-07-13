@@ -20,7 +20,6 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
-	background-color: rgba(255, 255, 255, 0.5);
 }
 
 header a, a:visited{
@@ -143,19 +142,10 @@ h2 {
     transition: all 0.4s ease;
 }
 
-#discription .box {
-    width: 11vw;
-    height: 82rem;
-}
-
-#discription rect .box_rect {
-	width: 10vw;
-	height: 80rem;
-}
 
 #map {
     z-index: 500;
-    height: 45vh;
+    height: 50vh;
     width: 100%;
     margin: 0 0 5rem 0;
     transition: all 0.4s ease;
@@ -169,12 +159,12 @@ h2 {
 
     .seperate {
         display: grid;
-        grid-template-columns: 2fr 6fr 1fr;
-        grid-template-areas: "left center right";
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas: "side right";
     }
 
     .boxes {
-        grid-area: left;
+        grid-area: side;
     }
 
     #container {
@@ -196,13 +186,9 @@ h2 {
     }
 
     #map {
-        grid-area: center;
+        grid-area: right;
         height: 80vh;
         width: 100%;
     }
 
-    #descript {
-        grid-area: right;
-        height:
-    }
 }

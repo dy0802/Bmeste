@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>{{ author.name }} - В Месте</title>
+    <title>{{ author.author_name }} - В Месте</title>
     <link href="{% static 'Bmeste/css/styles-author_detail.css' %}" rel="stylesheet" type="text/css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
@@ -44,7 +44,7 @@
                         x="50%" y="50%"
                         font-size="3rem"
                         fill="#ffffff"
-                        filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ forloop.counter }}. {{ detail.piece_detail }}</text>
+                        filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ forloop.counter }}. {{ author.author_detail }}</text>
                 </svg>
             </div>
         {% endfor %}
