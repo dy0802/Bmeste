@@ -143,14 +143,25 @@ h2 {
     transition: all 0.4s ease;
 }
 
-#discription .box {
+.box_discript {
     width: 11vw;
     height: 82rem;
+    position: absolute;
+    cursor: pointer;
 }
 
-#discription rect .box_rect {
+.box_discript:hover .box_rect_discript {
+    fill: #003876;
+}
+
+.box_rect_discript {
+    fill: #D0CECE;
+    rx: 1.5rem;
+	ry: 1.5rem;
 	width: 10vw;
 	height: 80rem;
+	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
+    transition: all 0.4s ease;
 }
 
 #map {
