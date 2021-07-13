@@ -1,5 +1,4 @@
-from django.shortcuts import render, get_object_or_404
-from django.urls import reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from Bmeste.models import Author, Piece, Comment_piece
 from django.utils import timezone
 
@@ -14,14 +13,19 @@ def pieces(request):
 
 def piece_detail(request, piece_id):
     piece = get_object_or_404(Piece, pk=piece_id)
-    if request.method == "POST":
-        comment = Comment_piece()
-        comment.post = piece
-        comment.writer_name = request.POST['writer_name']
-        comment.comment_text = request.POST['comment_text']
-        comment.created = timezone.now
-        comment.save()
-    return render(request, 'Bmeste/piece_detail.html', {'piece': piece})
+    comments = piece.comments.all()
+    context = {'piece': piece, 'commnets': comments}
+    return render(request, 'Bmeste/piece_detail.html', context)
+
+def c_post(request, piece_id):
+    if request.method =='POST':
+        piece = get_object_or_404(Piece, pk=piece_id)
+        comment_text = request.POST.get('comment_text')
+        comment_user = request.POST.get('comment_user')
+        Comment_piece.objects.create(piece=piece, comment_text=comment_text, comment_user=comment_user)
+
+    return redirect('Bmeste:piece_detail', piece_id)
+
 
 def authors(request):
     author_list = Author.objects.all().order_by('-pub_date')
