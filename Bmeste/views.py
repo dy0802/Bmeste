@@ -14,7 +14,7 @@ def pieces(request):
 def piece_detail(request, piece_id):
     piece = get_object_or_404(Piece, pk=piece_id)
     comments = piece.comments.all()
-    context = {'piece': piece, 'commnets': comments}
+    context = {'piece': piece, 'comments': comments}
     return render(request, 'Bmeste/piece_detail.html', context)
 
 def c_post(request, piece_id):

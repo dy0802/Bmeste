@@ -53,7 +53,7 @@
                     <text text-anchor="middle"
                         alignment-baseline="middle"
                         x="50%" y="50%"
-                        font-size="3rem"
+                        font-size="2rem"
                         fill="#ffffff"
                         filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ forloop.counter }}. {{ detail.piece_detail }}</text>
                 </svg>
@@ -72,8 +72,8 @@
     <table class="table table-striped">
     {% for comment in comments %}
     <tr>
-        <td>{{ comment.created }}</td>
-        <td>{{ comment.writer_name }}</td>
+        <td>{{ comment.comment_date }}</td>
+        <td>{{ comment.comment_user }}</td>
         <td>{{ comment.comment_text|linebreaks }}</td>
     </tr>
     </table>
