@@ -148,10 +148,12 @@ h2 {
 }
 
 .box_discript {
+    display: block;
     width: 82vw;
     height: 11rem;
     position: absolute;
     cursor: pointer;
+    display: inline;
 }
 
 .box_discript:hover .box_rect_discript {
@@ -221,11 +223,11 @@ h2 {
     }
     .box_discript {
         width: 11vw;
-        height: 82rem;
+        height: 81vh;
     }
 
     .box_rect_discript {
 	    width: 10vw;
-	    height: 80rem;
+	    height: 80vh;
     }
 }
