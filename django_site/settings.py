@@ -32,7 +32,7 @@ DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = [
     "vmeste.co.kr"
-    "ec2-3-34-144-201.ap-northeast-2.compute.amazonaws.com",
+    "ec2-13-124-109-41.ap-northeast-2.compute.amazonaws.com",
     "localhost",
 ]
 
