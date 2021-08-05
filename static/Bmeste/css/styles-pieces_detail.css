@@ -1,5 +1,5 @@
 .seperate {
-    margin: 0 5rem 0 5rem;
+    margin: 15rem 5rem 0 5rem;
     justify-items: center;
 }
 
@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     overflow: auto;
+    
 }
 
 #container {
