@@ -14,16 +14,6 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
-class Author_detail(models.Model):
-    author = models.ForeignKey(Author, on_delete=models.CASCADE,)
-    author_detail = models.CharField(max_length=200, default="",)
-    location_lat = models.FloatField(default=0)
-    location_lng = models.FloatField(default=0)
-    description = models.TextField(max_length=200, default="")
-
-    def __str__(self):
-        return self.author_detail
-
 class Piece(models.Model):
     id = models.AutoField(primary_key=True, null=False, blank=False)
     author = models.ForeignKey(Author, on_delete=models.CASCADE,)
@@ -38,9 +28,10 @@ class Piece(models.Model):
 class Piece_detail(models.Model):
     piece = models.ForeignKey(Piece, on_delete=models.CASCADE,)
     piece_detail = models.CharField(max_length=200, default="",)
+    piece_detail_rus = models.CharField(max_length=200, default="",)
     location_lat = models.FloatField(default=0)
     location_lng = models.FloatField(default=0)
-    description = models.TextField(max_length=200, default="")
+    description = models.TextField(default="")
 
     def __str__(self):
         return self.piece_detail

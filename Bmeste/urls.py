@@ -11,5 +11,4 @@ urlpatterns = [
     path('pieces/all/', views.all_pieces, name='all_pieces'),
     path('authors/', views.authors, name='authors'),
     path('about/', views.about, name='about'),
-    re_path(r'^authors/(?P<author_id>\d+)/', views.author_detail, name='author_detail'),
 ]

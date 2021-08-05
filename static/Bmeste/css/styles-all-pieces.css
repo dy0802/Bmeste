@@ -44,9 +44,6 @@
 }
 
 @media (orientation: landscape) {
-    html {
-        font-size: 0.45vw;
-    }
     .boxes {
         margin: 15rem 10rem 0 15rem;
         display: grid;

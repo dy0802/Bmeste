@@ -38,8 +38,4 @@ def authors(request):
     return render(request, 'Bmeste/authors.html')
 
 def about(request):
-    return render(request, 'Bmeste/about.html')    
-
-def author_detail(request, author_id):
-    author = get_object_or_404(Author, pk=author_id)
-    return render(request, 'Bmeste/author_detail.html', {'author': author})
+    return render(request, 'Bmeste/about.html')

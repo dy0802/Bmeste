@@ -193,7 +193,7 @@ header a div h2 {
 
 @media (orientation: landscape) {
     html {
-        font-size: 0.45vw;
+        font-size: 0.3vw;
     }
     header {
         flex-direction: row;

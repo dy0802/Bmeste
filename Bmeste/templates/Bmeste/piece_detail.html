@@ -6,15 +6,14 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <div class="seperate">
         <div id="map"></div>
-        <div id="decription">
+        <div id="discription_btn">
             <svg class="box_discript">
                 <rect class="box_rect_discript"></rect>
                 <text text-anchor="middle"
                     alignment-baseline="middle"
                     x="50%" y="50%"
-                    font-size="4rem"
+                    font-size="3rem"
                     fill="#ffffff"
-                    writing-mode="vertical-rl"
                     filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">설명보기</text>
             </svg>
         </div>
@@ -26,36 +25,44 @@
                     <rect class="box_rect"></rect>
                     <text text-anchor="middle"
                         alignment-baseline="middle"
-                        x="50%" y="50%"
-                        font-size="2rem"
+                        x="50%" y="40%"
+                        font-size="2.5rem"
                         fill="#ffffff"
                         filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ forloop.counter }}. {{ detail.piece_detail }}</text>
+                    <text text-anchor="middle"
+                        alignment-baseline="middle"
+                        x="50%" y="60%"
+                        font-size="2rem"
+                        fill="#ffffff"
+                        filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ detail.piece_detail_rus }}</text>
                 </svg>
             </div>
         {% endfor %}
         </div>
 
     </div>
-    <form action="{% url 'Bmeste:c_post' piece.id %}" method="POST">
-        {% csrf_token %}
-        <input type="text" name="comment_user" id="comment_user" placeholder="User">
-        <input type="text" name="comment_text" id="comment_text" placeholder="Comment">
-        <button type="submit">게시</button>
-    </form>
-
-    <table class="table table-striped">
-    {% for comment in comments %}
-    <tr>
-        <td>{{ comment.comment_date }}</td>
-        <td>{{ comment.comment_user }}</td>
-        <td>{{ comment.comment_text|linebreaks }}</td>
-    </tr>
-    </table>
-    {% empty %}
-    <p>No comments here yet :(</p>
-    {% endfor %}
-
-
+    <div class="comment">
+        <p class="head">의견 남기기 (Mнение)</p>
+        <form action="{% url 'Bmeste:c_post' piece.id %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="comment_user" id="comment_user" placeholder="User">
+            <input type="text" name="comment_text" id="comment_text" placeholder="Comment">
+            <button type="submit">게시</button>
+        </form>
+        {% if comments %}
+        <table class="table">
+        {% for comment in comments %}
+            <tr>
+                <td class="table_date">{{ comment.comment_date }}</td>
+                <td class="table_user">{{ comment.comment_user }}</td>
+                <td class="table_text">{{ comment.comment_text|linebreaks }}</td>
+            </tr>
+        {% endfor %}    
+        </table>
+        {% else %}
+        <p>No comments here yet :(</p>
+        {% endif %}
+    </div>
 
     {% for detail in piece.piece_detail_set.all %}
     {{ detail.piece_detail|json_script:"piece_detail" }}
