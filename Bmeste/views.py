@@ -4,11 +4,18 @@ from django.utils import timezone
 
 
 def index(request):
-    return render(request, 'Bmeste/index.html')
+    author_list = Author.objects.all()
+    context = {'author_list': author_list}
+    return render(request, 'Bmeste/index.html', context)
 
-def pieces(request):
+def all_pieces(request):
     author_list = Author.objects.all().order_by('-pub_date')
     context = {'author_list': author_list}
+    return render(request, 'Bmeste/all_pieces.html', context)
+
+def pieces(request, author_id):
+    author = get_object_or_404(Author, pk=author_id)
+    context = {'author': author}
     return render(request, 'Bmeste/pieces.html', context)
 
 def piece_detail(request, piece_id):
@@ -28,9 +35,10 @@ def c_post(request, piece_id):
 
 
 def authors(request):
-    author_list = Author.objects.all().order_by('-pub_date')
-    context = {'author_list': author_list}
-    return render(request, 'Bmeste/authors.html', context)
+    return render(request, 'Bmeste/authors.html')
+
+def about(request):
+    return render(request, 'Bmeste/about.html')    
 
 def author_detail(request, author_id):
     author = get_object_or_404(Author, pk=author_id)

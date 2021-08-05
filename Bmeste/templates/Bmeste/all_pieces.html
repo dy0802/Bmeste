@@ -1,0 +1,34 @@
+{% extends 'Bmeste/base.html' %}
+{% block title %}<title>작품모음 - В Месте</title>{% endblock %}
+{% block content %}
+{% load static %}
+<link href="{% static 'Bmeste/css/styles-all-pieces.css' %}" rel="stylesheet" type="text/css">
+    <div class="boxes">
+    {% if author_list %}
+        {% for author in author_list %}
+            {% for piece in author.piece_set.all %}
+                <a href="/pieces/{{ piece.id }}/">
+                    <div id="container">
+                        <svg id="box">
+                            <rect class="rectangle"></rect>
+                            <text text-anchor="start"
+                                alignment-baseline="middle"
+                                x="32%" y="35%"
+                                font-size="4rem"
+                                fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ author.name }}</text>
+                            <text text-anchor="start"
+                                alignment-baseline="middle"
+                                x="32%" y="60%"
+                                font-size="5rem"
+                                fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))"><{{ piece.title }}></text>
+                        </svg>
+                        <img class="author_img"src="{{ author.img.url }}"/>
+                    </div>
+                </a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>Service is not azik ready.</p>
+    {% endif %}
+{% endblock %}

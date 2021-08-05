@@ -1,0 +1,47 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    {% block title %}<title>В Месте</title>{% endblock %}
+    <link href="{% static 'Bmeste/css/styles-base.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div>
+		<svg class="circle_1">
+			<circle id="circle_1" r="40.35rem" cx="40.35rem" cy="40.35rem"></circle>
+		</svg>
+		<svg class="circle_2">
+			<circle id="circle_2" r="48.95rem" cx="48.95rem" cy="48.95rem"></circle>
+		</svg>
+	</div>
+	<header>
+        <a class="home" href="/" title="В Месте 홈">
+            <svg class="header_line">
+                <rect id="header_line"></rect>
+            </svg>
+            <div>
+                <h1>В Месте</h1>
+                <h2>함께, 그곳에</h2>
+            </div>
+        </a>
+        <nav class="site-nav">
+            <ul class="navbar_menu">
+                <li class="menulink"><a href="/pieces/all/">작품지도</a></li>
+                <li class="menulink"><a href="/authors/">작가지도</a></li>
+                <li class="menulink"><a href="/about/">about</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="{% static 'Bmeste/imgs/Hamburger_icon.png' %}">
+        </a>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <div class="mask"></div>
+    <script src="{% static 'Bmeste/js/nav.js' %}"></script>
+</body>
+</html>

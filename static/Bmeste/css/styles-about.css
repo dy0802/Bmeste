@@ -1,0 +1,159 @@
+@font-face{
+    font-family: SCDream7;
+    src: url('../fonts/SCDream7.otf')
+}
+
+.about {
+    inset: 0;
+    width: 100%;
+    height: fit-content;
+    margin-top: 6rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle_1, .circle_2 {
+    display: none;
+}
+
+.b_circle {
+    position: fixed;
+    overflow: visible;
+    top: 48rem;
+    width: 82rem;
+    height: 82rem;
+    z-index: -1;
+}
+
+#b_circle {
+    fill: #FFFFFF;
+    stroke: #BDD7EE;
+    stroke-width: 30rem;
+}
+
+
+.about h1 {
+    font-size: 9rem;
+    color: #003876;
+    border-bottom: 3px solid #707070;
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+}
+
+.team p {
+    margin: 0;
+    font-size: 4rem;
+}
+
+.highlight {
+    color: #5776A5;
+}
+
+.member {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.member div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.member img {
+    width: 40rem;
+    height: 40rem;
+}
+
+.member p {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.prof {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+}
+
+.prof p {
+    margin: 0;
+    font-size: 4rem;
+}
+
+.bmeste {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+    align-items: flex-end;
+}
+
+.bmeste p {
+    margin: 0;
+    font-size : 4rem;
+}
+
+.bmeste .bold {
+    font-family: SCDream7;
+    font-size: 5rem;
+}
+
+.discription {
+    margin-bottom: 5rem;
+}
+
+
+.bmeste-discription {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.first {
+    margin-top: 3rem;
+}
+
+.second {
+    margin-top: 1rem;
+}
+
+.bmeste-discription p {
+    margin: 0;
+    font-size: 4rem;
+    white-space: nowrap;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    margin: 10vh 0 15rem 0;
+}
+
+.contact p {
+    margin: 0;
+    font-size: 4rem;
+}
+
+@media (orientation: landscape) {
+    .member {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .discription {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .second {
+        margin-top: 3rem;
+    }
+}

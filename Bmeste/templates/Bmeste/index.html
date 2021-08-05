@@ -1,58 +1,32 @@
-<!doctype html>
+{% extends 'Bmeste/base.html' %}
+{% block content %}
 {% load static %}
-<html>
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>В Месте</title>
-    <link href="{% static 'Bmeste/css/styles-index.css' %}" rel="stylesheet" type="text/css">
-</head>
-	
-<body>
-	<div>
-		<svg class="circle_1">
-			<circle id="circle_1" r="40.35rem" cx="40.35rem" cy="40.35rem"></circle>
-		</svg>
-		<svg class="circle_2">
-			<circle id="circle_2" r="48.95rem" cx="48.95rem" cy="48.95rem"></circle>
-		</svg>
-	</div>
-	<h1>В Месте</h1>
-	<h2>함께, 그곳에</h2>
-	<div id="line_disp">
-		<svg class="line">
-			<rect id="line"></rect>
-		</svg>
-	</div>
-	<div id="boxes">
-		<svg id="box">
-			<rect id="rectangle_1"></rect>
-			<text text-anchor="middle"
-				  alignment-baseline="middle"
-				  x="50%" y="50%"
-				  font-size="7.5rem"
-				  fill="#ffffff"
-				  filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">작품 지도</text>
-			<rect id="white_rect"></rect>
-			<a href= "/pieces/" title="작품 지도 바로가기">
-				<text text-anchor="middle" alignment-baseline="middle" x="50%" y="80%" font-size="3.5rem">바로가기</text>
-			</a>
-		</svg>
+<link href="{% static 'Bmeste/css/carousel.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'Bmeste/css/styles-index.css' %}" rel="stylesheet" type="text/css">
 
-		<svg id="box">
-			<rect id="rectangle_2"></rect>
-			<text text-anchor="middle"
-				  alignment-baseline="middle"
-				  x="50%" y="50%"
-				  font-size="7.5rem"
-				  fill="#ffffff"
-				  filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">작가 지도</text>
-			<rect id="white_rect"></rect>
-			<a href= "/authors/" title="작가 지도 바로가기">
-				<text text-anchor="middle" alignment-baseline="middle" x="50%" y="80%" font-size="3.5rem">바로가기</text>
-			</a>
-		</svg>
-	</div>
-</body>
-</html>
+
+<div class="index">
+    <h1>В Месте</h1>
+    <h2>함께, 그곳에</h2>
+    <div id="line_disp">
+        <svg class="index_line">
+            <rect id="index_line"></rect>
+        </svg>
+    </div>
+</div>
+
+<div class="gallery">
+    <div class="gallery-container">
+        {% for author in author_list %}
+        <figure class="gallery-item gallery-item-{{ author.id }}" data-index="{{ author.id }}">
+            <img class="gallery-photo gallery-photo-{{ author.id }}" src="{{ author.img.url }}">
+            <h3><a href='/author/{{ author.id }}/'>바로가기</a></h3>
+            <figcaption><text>{{ author.name }}</text></figcaption>
+        </figure>
+        {% endfor %}
+    </div>
+    <div class="gallery-controls"></div>
+</div>
+
+<script src="{% static 'Bmeste/js/carousel.js' %}"></script>
+{% endblock %}

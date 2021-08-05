@@ -2,12 +2,17 @@ from django.db import models
 from django.utils import timezone
 
 class Author(models.Model):
-    author_name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default="")
+    name_rus = models.CharField(max_length=200, default="")
+    description = models.TextField(default="")
     img = models.ImageField(upload_to="static/Bmeste/profile_img", default="None.jpg")
-    pub_date = models.DateTimeField('date published')
+    birth = models.IntegerField(default=0)
+    death = models.IntegerField(default=0)
+    
+    pub_date = models.DateTimeField('date published', default=timezone.now)
 
     def __str__(self):
-        return self.author_name
+        return self.name
 
 class Author_detail(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE,)
@@ -23,6 +28,7 @@ class Piece(models.Model):
     id = models.AutoField(primary_key=True, null=False, blank=False)
     author = models.ForeignKey(Author, on_delete=models.CASCADE,)
     title = models.CharField(max_length=200, default="",)
+    title_rus = models.CharField(max_length=200, default="",)
     default_location_lat = models.FloatField(default=0)
     default_location_lng = models.FloatField(default=0)
 

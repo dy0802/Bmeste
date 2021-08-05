@@ -1,36 +1,18 @@
-@font-face{
-    font-family: SCDream5;
-    src: url('../fonts/SCDream5.otf')
+.index {
+    margin-top: 100px;
 }
 
-body{
-    font-family: SCDReam5;
-}
-
-html {
-    font-size: 0.55vh;
-}
-
-h1 {
+.index h1 {
 	color: #003876;
 	text-align: center;
 	font-size: 10.4rem;
 	margin: 10rem 0 0 0;
 }
 
-h2 {
+.index h2 {
 	text-align: center;
 	font-size: 7.7rem;
 	margin: 0;
-}
-
-svg a {
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-svg a:hover {
-  fill: #448aff;
 }
 
 #line_disp {
@@ -39,129 +21,13 @@ svg a:hover {
 	margin: 0 0 10rem 0;
 }
 
-.line {
+.index_line {
 	width: 50rem;
 	height: 0.5rem;
 }
 
-#line {
+#index_line {
     fill: #707070;
 	width: 200rem;
 	height: 0.5rem;
 }
-
-#boxes {
-    display: flex;
-    flex-direction: column;
-    align-items: center
-}
-
-#box {
-    width: 60rem;
-    height: 60rem;
-    position: relative;
-    justify-content: center;
-}
-
-#rectangle_1 {
-    display: block;
-	fill: rgb(245,245,87);
-	rx: 11.3rem;
-	ry: 11.3rem;
-	-webkit-rx: 11.3rem;
-	-webkit-ry: 11.3rem;
-	margin: 0 auto;
-	padding: 7rem 0;
-	width: 57.5rem;
-	height: 57.5rem;
-	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
-}
-
-#rectangle_2 {
-    display: block;
-	fill: #5ED3D3;
-	rx: 11.3rem;
-	ry: 11.3rem;
-	-webkit-rx: 11.3rem;
-	-webkit-ry: 11.3rem;
-	margin: 0 auto;
-	padding: 7rem 0;
-	width: 57.5rem;
-	height: 57.5rem;
-    filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
-}
-
-#white_rect {
-    fill: #FFFFFF;
-    width: 27.3rem;
-    height: 8.8rem;
-    rx: 2.5rem;
-    ry: 2.5rem;
-	-webkit-rx: 2.5rem;
-	-webkit-ry: 2.5rem;
-    x: 50%;
-    y: 80%;
-    transform: translate(-13.95rem, -4.4rem);
-}
-
-.circle_1 {
-    position: fixed;
-    overflow: visible;
-    width: 80.7rem;
-    height: 80.7rem;
-    left: -18.7rem;
-    bottom: -10rem;
-    z-index: -1;
-    border-image-slice: 0 0 18.7rem 0;
-}
-
-#circle_1 {
-    fill: #FFFFFF;
-    stroke: rgba(94,211,211,0.651);
-    stroke-width: 15rem;
-}
-
-.circle_2 {
-    position: fixed;
-    overflow: visible;
-    width: 97.9rem;
-    height: 97.9rem;
-    right: -20rem;
-    top: -16.8rem;
-    z-index: -1;
-    border-image-slice: 16.8rem  0 0;
-}
-
-#circle_2 {
-    fill: #FFFFFF;
-    stroke: rgba(245,245,87,1);
-    stroke-width: 7.5rem;
-}
-
-
-@media (orientation: landscape) {
-    html {
-        font-size: 0.45vw;
-    }
-    #line {
-	    width: 200rem;
-	    height: 3px;
-    }
-    #rectangle_1 {
-        padding: 0;
-    }
-
-    #rectangle_2 {
-        padding: 0;
-    }
-    #boxes {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
-
-
-
-
-
-

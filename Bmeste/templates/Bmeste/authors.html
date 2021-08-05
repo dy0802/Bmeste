@@ -1,54 +1,10 @@
-<!doctype html>
+{% extends 'Bmeste/base.html' %}
+{% block title %}<title>작가지도 - В Месте</title>{% endblock %}
+{% block content %}
 {% load static %}
-<html>
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>작가지도 - В Месте</title>
-    <link href="{% static 'Bmeste/css/styles-authors.css' %}" rel="stylesheet" type="text/css">
-</head>
+<link href="{% static 'Bmeste/css/styles-authors.css' %}" rel="stylesheet" type="text/css">
+<div class="comming">
+    <img class="soon" src="{% static 'Bmeste/imgs/commingsoon.jpg' %}">
+</div>
 
-<body>
-	<div>
-		<svg class="circle_1">
-			<circle id="circle_1" r="40.35rem" cx="40.35rem" cy="40.35rem"></circle>
-		</svg>
-		<svg class="circle_2">
-			<circle id="circle_2" r="48.95rem" cx="48.95rem" cy="48.95rem"></circle>
-		</svg>
-	</div>
-    <header>
-        <a href="../" title="В Месте 홈">
-            <svg class="line">
-                <rect id="line"></rect>
-            </svg>
-            <div>
-                <h1>В Месте</h1>
-                <h2>함께, 그곳에</h2>
-            </div>
-        </a>
-    </header>
-    <div class="boxes">
-    {% if author_list %}
-        {% for author in author_list %}
-            <a href="/authors/{{ author.id }}/">
-                <div id="container">
-                    <svg id="box">
-                        <rect class="rectangle"></rect>
-                        <text text-anchor="start"
-                            alignment-baseline="middle"
-                            x="40%" y="45%"
-                            font-size="6rem"
-                            fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ author.author_name }}</text>
-                    </svg>
-                    <img src="{{ author.img.url }}"/>
-                </div>
-            </a>
-        {% endfor %}
-    </div>
-    {% else %}
-        <p>Service is not azik ready.</p>
-    {% endif %}
-</body>
-</html>
+{% endblock %}

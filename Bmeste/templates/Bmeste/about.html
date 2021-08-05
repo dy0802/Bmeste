@@ -1,0 +1,66 @@
+{% extends 'Bmeste/base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'Bmeste/css/styles-about.css' %}" rel="stylesheet" type="text/css">
+{% block title %}<title>About - В Месте</title>{% endblock %}
+<div class="about">
+    <svg class="b_circle">
+        <circle id="b_circle" r="42rem" cx="42rem" cy="42rem"></circle>
+    </svg>
+
+
+    <h1>About us</h1>
+    <div class="team">
+        <p class="highlight">Team&nbsp;&nbsp;</p>
+        <p>동행(同行)</p>
+    </div>
+    <div class="member">
+        <div>
+            <img class="e" src="{% static 'Bmeste/imgs/member1.jpg' %}">
+            <p>최은지</p>
+            <p>-연세대학교 노어노문학과</p>
+        </div>
+        <div>
+            <img class="e" src="{% static 'Bmeste/imgs/member2.jpg' %}">
+            <p>김다혜</p>
+            <p>-연세대학교 노어노문학과</p>
+        </div>
+        <div>
+            <img class="e" src="{% static 'Bmeste/imgs/member3.jpg' %}">
+            <p>이예린</p>
+            <p>-연세대학교 노어노문학과</p>
+        </div>
+        <div>
+            <img class="e" src="{% static 'Bmeste/imgs/member4.jpg' %}">
+            <p>이도엽</p>
+            <p>-연세대학교 수학과</p>
+        </div>
+    </div>
+    <div class="prof">
+        <p class="highlight">지도교수&nbsp;&nbsp;</p>
+        <p>정보라 / 연세대학교 노어노문학</p>
+    </div>
+    <div class="bmeste">
+        <p class="bold">&ldquo;В Месте&rdquo;&nbsp;</p>
+        <p>Вместе: 함께, В Месте: 그곳에</p>
+    </div>
+    <div class="discription">
+        <div class="bmeste-discription first">
+            <p>러시아 문학을 접하는 모든 이들과&nbsp;</p>
+            <p class="highlight">함께&nbsp;</p>
+        </div>
+        <div class="bmeste-discription second">
+            <p>작품 속 배경이 되는&nbsp;</p>
+            <p class="highlight">장소(그곳)</p>
+            <p>를&nbsp;</p>
+            <p class="highlight">동행</p>
+        </div>
+    </div>
+    <div class="contact">
+        <p class="highlight">Contact:&nbsp;</p>
+        <p>vmesteyonsei@gmail.com</p>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,61 +1,46 @@
-<!doctype html>
+{% extends 'Bmeste/base.html' %}
+{% block content %}
 {% load static %}
-<html>
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>작품지도 - В Месте</title>
-    <link href="{% static 'Bmeste/css/styles-pieces.css' %}" rel="stylesheet" type="text/css">
-</head>
+<link href="{% static 'Bmeste/css/styles-pieces.css' %}" rel="stylesheet" type="text/css">
+{% block title %}<title>{{author.name}} - В Месте</title>{% endblock %}
 
-<body>
-	<div>
-		<svg class="circle_1">
-			<circle id="circle_1" r="40.35rem" cx="40.35rem" cy="40.35rem"></circle>
-		</svg>
-		<svg class="circle_2">
-			<circle id="circle_2" r="48.95rem" cx="48.95rem" cy="48.95rem"></circle>
-		</svg>
-	</div>
-    <header>
-        <a href="../" title="В Месте 홈">
-            <svg class="line">
-                <rect id="line"></rect>
-            </svg>
-            <div>
-                <h1>В Месте</h1>
-                <h2>함께, 그곳에</h2>
+
+<div class="author_description">
+    <img src="{{ author.img.url }}"/>
+    <div class="description">
+        <div class="profile">
+            <p>{{ author.name }}({{ author.name_rus }})</p>
+            <p>{{ author.birth }}-{{ author.death }}</p>
+        </div>
+        <p>{{ author.description }}</p>    
+    </div>
+</div>
+
+
+<div class="boxes">
+{% if author.piece_set.all %}    
+    {% for piece in author.piece_set.all %}
+        <a href="/pieces/{{ piece.id }}/">
+        <div id="container">
+                <svg id="box">
+                    <rect class="rectangle"></rect>
+                    <text text-anchor="middle"
+                        alignment-baseline="middle"
+                        x="50%" y="35%"
+                        font-size="5rem"
+                        fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ piece.title }}</text>
+                        <text text-anchor="middle"
+                        alignment-baseline="middle"
+                        x="50%" y="55%"
+                        font-size="5rem"
+                        fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ piece.title_rus }}</text>
+                </svg>
+                
             </div>
         </a>
-    </header>
-    <div class="boxes">
-    {% if author_list %}
-        {% for author in author_list %}
-            {% for piece in author.piece_set.all %}
-                <a href="/pieces/{{ piece.id }}/">
-                    <div id="container">
-                        <svg id="box">
-                            <rect class="rectangle"></rect>
-                            <text text-anchor="start"
-                                alignment-baseline="middle"
-                                x="40%" y="30%"
-                                font-size="4rem"
-                                fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ author.author_name }}</text>
-                            <text text-anchor="start"
-                                alignment-baseline="middle"
-                                x="40%" y="55%"
-                                font-size="5rem"
-                                fill="#ffffff" filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))"><{{ piece.title }}></text>
-                        </svg>
-                        <img src="{{ author.img.url }}"/>
-                    </div>
-                </a>
-            {% endfor %}
-        {% endfor %}
-    </div>
-    {% else %}
-        <p>Service is not azik ready.</p>
-    {% endif %}
-</body>
-</html>
+    {% endfor %}
+</div>
+{% else %}
+    <p>Service is not azik ready.</p>
+{% endif %}
+{% endblock %}

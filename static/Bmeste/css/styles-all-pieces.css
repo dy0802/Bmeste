@@ -1,0 +1,69 @@
+.boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15rem;
+}
+
+#container {
+    width: 90vw;
+    height: 32rem;
+    position: relative;
+    justify-content: center;
+}
+
+
+#box {
+    width: 90vw;
+    height: 32rem;
+    position: absolute;
+    overflow: visible;
+}
+
+#container:hover .rectangle {
+    fill: #003876;
+}
+
+.rectangle{
+    fill: #D0CECE;
+    rx: 5rem;
+	ry: 5rem;
+	width: 90vw;
+	height: 30rem;
+	filter: drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161));
+	cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.author_img {
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+}
+
+@media (orientation: landscape) {
+    html {
+        font-size: 0.45vw;
+    }
+    .boxes {
+        margin: 15rem 10rem 0 15rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    #container {
+        width: 42vw;
+    }
+
+    #box {
+        width: 42vw;
+    }
+
+    .rectangle{
+        width: 40vw;
+    }
+
+}
