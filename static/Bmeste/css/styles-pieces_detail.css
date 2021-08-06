@@ -136,7 +136,7 @@
     align-items: center;
 }
 
-.comment .head {
+.comment .comment_head {
     font-size: 3rem;
     padding-left: 1rem;
     border-left: 0.75rem solid #707070;
@@ -165,7 +165,7 @@
 
 .comment input::-webkit-input-placeholder {
     text-align: center;
- }
+}
 
  .table {
      margin-top: 3rem;

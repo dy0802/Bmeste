@@ -2,7 +2,6 @@ import {details_location, initializing} from "./map.js";
 import {set_streetview} from "./streetview.js";
 
 const target = document.getElementsByClassName('box');
-const defaultSet = document.getElementsByClassName('box_rect');
 
 var toggleOnOff = [];
 
@@ -45,3 +44,5 @@ function click_listener(event)
         }
     }
 }
+
+export {toggleOnOff};

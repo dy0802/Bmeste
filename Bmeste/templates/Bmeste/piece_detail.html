@@ -3,6 +3,8 @@
 {% load static %}
     {% block title %}<title>{{ piece.title }} - В Месте</title>{% endblock %}
     <link href="{% static 'Bmeste/css/styles-pieces_detail.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'Bmeste/css/popup.css' %}" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <div class="seperate">
         <div id="map"></div>
@@ -25,14 +27,14 @@
                     <rect class="box_rect"></rect>
                     <text text-anchor="middle"
                         alignment-baseline="middle"
-                        x="50%" y="40%"
+                        x="49.5%" y="40%"
                         font-size="2.5rem"
                         fill="#ffffff"
                         filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ forloop.counter }}. {{ detail.piece_detail }}</text>
                     <text text-anchor="middle"
                         alignment-baseline="middle"
-                        x="50%" y="60%"
-                        font-size="2rem"
+                        x="50%" y="65%"
+                        font-size="2.5rem"
                         fill="#ffffff"
                         filter="drop-shadow(1rem 0.3rem 0.6rem rgba(0, 0, 0, 0.161))">{{ detail.piece_detail_rus }}</text>
                 </svg>
@@ -42,7 +44,7 @@
 
     </div>
     <div class="comment">
-        <p class="head">의견 남기기 (Mнение)</p>
+        <p class="comment_head">의견 남기기 (Mнение)</p>
         <form action="{% url 'Bmeste:c_post' piece.id %}" method="POST">
             {% csrf_token %}
             <input type="text" name="comment_user" id="comment_user" placeholder="User">
@@ -60,17 +62,37 @@
         {% endfor %}    
         </table>
         {% else %}
-        <p>No comments here yet :(</p>
+        <p>No comment here yet :(</p>
         {% endif %}
     </div>
 
+    <div class="modal-wrapper">
+        <div class="modal">
+          <div class="head">
+            <a class="btn-close trigger" href="#">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="content">
+              <div class="paragraph">
+                <p class="detail_title"></p>
+                <p class="detail_description"></p>
+              </div>
+          </div>
+        </div>
+    </div>
+    
     {% for detail in piece.piece_detail_set.all %}
     {{ detail.piece_detail|json_script:"piece_detail" }}
+    {{ detail.piece_detail|json_script:"piece_detail_rus" }}
     {{ detail.location_lat|json_script:"lat" }}
     {{ detail.location_lng|json_script:"lng" }}
+    {{ detail.description|json_script:"description"}}
+
     {% endfor %}
     <script type="module" src="{% static 'Bmeste/js/map.js' %}"></script>
     <script type="module" src="{% static 'Bmeste/js/click.js' %}"></script>
+    <script type="module" src="{% static 'Bmeste/js/discription.js' %}"></script>
     {{ piece.default_location_lat|json_script:"default_location_lat" }}
     {{ piece.default_location_lng|json_script:"default_location_lng" }}
 

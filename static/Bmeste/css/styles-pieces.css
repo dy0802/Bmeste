@@ -66,9 +66,6 @@ img {
 }
 
 @media (orientation: landscape) {
-    html {
-        font-size: 0.45vw;
-    }
     .author_description{
         display: grid;
         margin-top: 25rem;
