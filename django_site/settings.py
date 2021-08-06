@@ -31,8 +31,8 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = [
-    "vmeste.co.kr",
-    "ec2-13-124-109-41.ap-northeast-2.compute.amazonaws.com",
+    ".vmeste.co.kr",
+    ".ec2-13-124-109-41.ap-northeast-2.compute.amazonaws.com",
     "localhost",
 ]
 
