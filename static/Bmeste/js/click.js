@@ -1,4 +1,4 @@
-import {details_location, initializing} from "./map.js";
+import {details_location, details_pov, initializing} from "./map.js";
 import {set_streetview} from "./streetview.js";
 
 const target = document.getElementsByClassName('box');
@@ -36,7 +36,7 @@ function click_listener(event)
     {
         if (toggleOnOff[n]%2 == 1)
         {
-            set_streetview(details_location[n]);
+            set_streetview(details_location[n], details_pov[n]);
         }
         else
         {

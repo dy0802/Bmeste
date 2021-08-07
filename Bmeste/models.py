@@ -21,6 +21,7 @@ class Piece(models.Model):
     title_rus = models.CharField(max_length=200, default="",)
     default_location_lat = models.FloatField(default=0)
     default_location_lng = models.FloatField(default=0)
+    default_location_zoom = models.FloatField(default=0)
 
     def __str__(self):
         return self.title
@@ -31,6 +32,8 @@ class Piece_detail(models.Model):
     piece_detail_rus = models.CharField(max_length=200, default="",)
     location_lat = models.FloatField(default=0)
     location_lng = models.FloatField(default=0)
+    location_heading = models.FloatField(default=0)
+    location_pitch = models.FloatField(default=0)
     description = models.TextField(default="")
 
     def __str__(self):

@@ -87,13 +87,15 @@
     {{ detail.piece_detail|json_script:"piece_detail_rus" }}
     {{ detail.location_lat|json_script:"lat" }}
     {{ detail.location_lng|json_script:"lng" }}
+    {{ detail.location_heading|json_script:"heading" }}
+    {{ detail.location_pitch|json_script:"pitch" }}
     {{ detail.description|json_script:"description"}}
-
     {% endfor %}
     <script type="module" src="{% static 'Bmeste/js/map.js' %}"></script>
     <script type="module" src="{% static 'Bmeste/js/click.js' %}"></script>
     <script type="module" src="{% static 'Bmeste/js/discription.js' %}"></script>
     {{ piece.default_location_lat|json_script:"default_location_lat" }}
     {{ piece.default_location_lng|json_script:"default_location_lng" }}
+    {{ piece.default_location_zoom|json_script:"default_location_zoom" }}
 
     {% endblock %}
